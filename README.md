@@ -24,13 +24,18 @@ organizations/users on GitHub. CMS refers to CryptoMiniSat.
 
 ## How to rebuild
 Clone all above repositories in their respective directories (i.e. cadical,
-cadiback, sbva, breakid, approxmc, arjun, ganak), then go into `ganak/build`
-and call `./rebuild_static_all_release.sh`. I have the GMP library recompiled
-to SandyBridge, because we used to have issues with that. So this binary may be
-a bit slower than if you had compiled GMP on your own machine. Basically, you
-have to configure it as:
+cadiback, sbva, breakid, approxmc, arjun, ganak), then make sure that a
+`build` subdirectory exists for all except `cadical` and `cadiback`. Then
+go to the `build` subdirectory for each, and execute: `ln -s ../scripts/*.sh .`
+or `ln -s ../scripts/build_scripts/*.sh .` to get the build scripts into the
+`build` subdirectory for each. Then go into `ganak/build` and call
+`./rebuild_static_all_release.sh`.
+
+I have the GMP library recompiled to SandyBridge, because we used to have
+issues with that. So this binary may be a bit slower than if you had compiled
+GMP on your own machine. Basically, you have to configure GMP as:
 ```bash
-CFLAGS="-march=sandybridge" ./configure --enable-cxx
+CFLAGS="-march=sandybridge" ./configure --enable-cxx --enable-shared --enable-static
 ```
 
 
