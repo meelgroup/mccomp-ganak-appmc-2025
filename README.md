@@ -22,6 +22,18 @@ All of the above is available online, in public repositories, at the time, and
 before the time of the competition, under `meelgroup` or `msoos`
 organizations/users on GitHub. CMS refers to CryptoMiniSat.
 
+## How to rebuild
+Clone all above repositories in their respective directories (i.e. cadical,
+cadiback, sbva, breakid, approxmc, arjun, ganak), then go into `ganak/build`
+and call `./rebuild_static_all_release.sh`. I have the GMP library recompiled
+to SandyBridge, because we used to have issues with that. So this binary may be
+a bit slower than if you had compiled GMP on your own machine. Basically, you
+have to configure it as:
+```bash
+CFLAGS="-march=sandybridge" ./configure --enable-cxx
+```
+
+
 ## Thanks
 Many thanks are printed while running the binary. Authors' names, papers, etc.
 Each repository also has its own set of thanks and authors and papers. Science
