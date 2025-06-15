@@ -4,8 +4,8 @@ exactly the same behaviour.
 
 ## SHA hashes:
 ```plain
-c o Ganak SHA1: aedde1b615483648bae077bcbd67795d247f3a27
-c o Arjun SHA1: 9104724fac387c0b88adc4e652b8a5759aee71d2
+c o Ganak SHA1: c7f86515f8be40d4fa776e74b55e448578c223df
+c o Arjun SHA1: ebef882b52863fcb29cfcf42d019c8528f94d16c
 c o SBVA SHA1: 18d080e656305261c696370f02251e57835db73a
 c o CMS SHA1: 26d64aacd7f8bad26f7025169875e210b0d1ed13
 c o ApproxMC SHA1: d145397d06584990a25f653c30ffbb29e4e1ff79
@@ -31,13 +31,25 @@ or `ln -s ../scripts/build_scripts/*.sh .` to get the build scripts into the
 `build` subdirectory for each. Then go into `ganak/build` and call
 `./rebuild_static_all_release.sh`.
 
-I have the GMP library recompiled to SandyBridge, because we used to have
-issues with that. So this binary may be a bit slower than if you had compiled
-GMP on your own machine. Basically, you have to configure GMP as:
+I have the GMP library recompiled to build both C++ and static libraries:
 ```bash
-CFLAGS="-march=sandybridge" ./configure --enable-cxx --enable-shared --enable-static
+#!/bin/bash
+make clean
+CC=gcc-14 CXX=g++-14 ./configure --enable-shared --enable-static --enable-cxx
+make clean
+CC=gcc-14 CXX=g++-14 make -j14
+sudo CC=gcc-14 CXX=g++-14 make -j14 install
 ```
 
+And I have mpfr compiled for static libraries, and location to GMP:
+```bash
+#!/bin/bash
+make clean
+CC=gcc-14 CXX=g++-14 ./configure --enable-shared --enable-static --with-gmp=/usr/local
+make clean
+CC=gcc-14 CXX=g++-14 make -j14
+sudo CC=gcc-14 CXX=g++-14 make -j14 install
+```
 
 ## Thanks
 Many thanks are printed while running the binary. Authors' names, papers, etc.
