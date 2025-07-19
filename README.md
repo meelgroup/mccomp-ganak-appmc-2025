@@ -4,15 +4,15 @@ exactly the same behaviour.
 
 ## SHA hashes:
 ```plain
-c o Ganak SHA1: c7f86515f8be40d4fa776e74b55e448578c223df
-c o Arjun SHA1: ebef882b52863fcb29cfcf42d019c8528f94d16c
-c o SBVA SHA1: 18d080e656305261c696370f02251e57835db73a
-c o CMS SHA1: 26d64aacd7f8bad26f7025169875e210b0d1ed13
-c o ApproxMC SHA1: d145397d06584990a25f653c30ffbb29e4e1ff79
-c o BreakID SHA1: 229da25440fb86dc2f9e0bc2d3f11490076dc9c1
+c o Ganak SHA1: 61286bc663e22987dfff25b4c01b1b4cff5beff3
+c o Arjun SHA1: 39ef145587c791ac101c8b3b503aa62b5b756d76
+c o SBVA SHA1: 0faa08cf3cc26ed855831c9dc16a3489c9ae010f
+c o CMS SHA1: 6c866e338b3221c6ed036273268037f96397b092
+c o ApproxMC SHA1: fb5dfbe46293e956cec7e963d9b649d0437160c1
+c o BreakID SHA1: dee9744b7041cec373aa0489128b06a40fce43a1
 
 CadiBack:
-c o Version 0.2.1 f30a13a347fffe99b557a52092a568a6d94a5e13
+c o Version 0.2.1 9c42e308406e76a5e8ea224d65e971f4208c9c36
 
 CadiCal:
 c o CaDiCaL 2.0.0 0e8be0642ebf3e872a9df806fc0c1c1d8fa90084
@@ -21,6 +21,8 @@ c o CaDiCaL 2.0.0 0e8be0642ebf3e872a9df806fc0c1c1d8fa90084
 All of the above is available online, in public repositories, at the time, and
 before the time of the competition, under `meelgroup` or `msoos`
 organizations/users on GitHub. CMS refers to CryptoMiniSat.
+
+Static binary compiled with `gcc (GCC) 15.1.1 20250425`
 
 ## How to rebuild
 Clone all above repositories in their respective directories (i.e. cadical,
