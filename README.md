@@ -18,6 +18,7 @@ CadiCal:
 c o CaDiCaL 2.0.0 0e8be0642ebf3e872a9df806fc0c1c1d8fa90084
 
 // internal note: this corresponds to run out-ganak-mccomp2324-14675861-0 on the Niagara cluster
+//                modulo printing epsilon/delta and fractional outputs
 ```
 
 All of the above is available online, in public repositories, at the time, and
